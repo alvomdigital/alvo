@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alvo Marketing Digital — Diagnóstico e Proposta</title>
+  <meta name="description" content="Preencha o diagnóstico rápido e receba um plano de alavancagem em tráfego pago e redes sociais para o seu negócio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7', 400: '#34d399', 
+              500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  </style>
+</head>
+<body class="bg-neutral-950 text-white">
+  <!-- Hero -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-neutral-900 via-neutral-900/60 to-neutral-950"></div>
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-block text-xs tracking-widest uppercase text-brand-300/80 mb-3">Alavancagem real para o seu negócio</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Diagnóstico rápido → <span class="text-brand-400">Plano de Tráfego Pago</span> sob medida</h1>
+          <p class="text-neutral-300 mt-4 text-lg">Em menos de 3 minutos, entendemos seu cenário e já desenhamos uma rota de crescimento com redes sociais + mídia paga. Sem achismo, só estratégia.</p>
+          <div class="flex flex-wrap items-center gap-3 mt-6">
+            <a href="#form" class="px-5 py-3 rounded-2xl bg-brand-500 hover:bg-brand-400 text-neutral-950 font-semibold shadow-xl shadow-brand-500/20">Começar agora</a>
+            <a target="_blank" rel="noopener" href="https://wa.me/5519989966216?text=Quero%20um%20diagn%C3%B3stico%20r%C3%A1pido%20de%20tr%C3%A1fego%20pago%20e%20redes%20sociais" class="px-5 py-3 rounded-2xl bg-neutral-800 hover:bg-neutral-700 font-semibold">Falar no WhatsApp</a>
+          </div>
+          <div class="mt-6 flex items-center gap-4 text-sm text-neutral-400">
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-brand-400"></span>Resposta em até 1 dia útil</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-brand-400"></span>Sem compromisso</div>
+          </div>
+        </div>
+        <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-8">
+          <ul class="space-y-4 text-neutral-300">
+            <li class="flex gap-3"><span class="text-brand-400">▸</span> Mapeamos suas redes, anúncios e funil atual</li>
+            <li class="flex gap-3"><span class="text-brand-400">▸</span> Encontramos <strong>oportunidades de ROI</strong> em 30 dias</li>
+            <li class="flex gap-3"><span class="text-brand-400">▸</span> Entregamos um <strong>mini-plano tático</strong> com metas claras</li>
+            <li class="flex gap-3"><span class="text-brand-400">▸</span> Proposta com <strong>escopo, prazos e investimento</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Formulário -->
+  <main id="form" class="max-w-5xl mx-auto px-6 pb-24">
+    <section class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-10">
+      <h2 class="text-2xl md:text-3xl font-bold">Diagnóstico de Redes + Tráfego</h2>
+      <p class="text-neutral-300 mt-2">Preencha os campos abaixo. Em até 24h enviamos seu raio-X com oportunidades e um plano de alavancagem.</p>
+
+      <form id="leadForm" action="https://formspree.io/f/SEU_ID_AQUI" method="POST" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Campos do formulário ... (resumido para não ocupar muito espaço aqui) -->
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-900/60">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center md:justify-between gap-3">
+      <p>© <span id="year"></span> Alvo Marketing Digital • Rio Claro/SP</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-white" href="https://www.instagram.com/alvo.md.digital" target="_blank" rel="noopener">@alvo.md.digital</a>
+        <a class="hover:text-white" href="mailto:contato@alvomarketing.digital">contato@alvomarketing.digital</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+    const form = document.getElementById('leadForm')
+    const status = document.getElementById('status')
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const okLGPD = document.getElementById('lgpd').checked
+      if (!okLGPD) { status.textContent = 'Marque o consentimento (LGPD) para continuar.'; return }
+      status.textContent = 'Enviando…'
+      const data = new FormData(form)
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        if (res.ok) {
+          status.textContent = 'Recebido! Em breve enviaremos seu plano.'
+          form.reset()
+          document.getElementById('lgpd').checked = false
+        } else {
+          status.textContent = 'Não conseguimos enviar. Tente novamente ou chame no WhatsApp.'
+        }
+      } catch (err) {
+        status.textContent = 'Falha de conexão. Tente novamente em instantes.'
+      }
+    })
+  </script>
+
+</body>
+</html>
